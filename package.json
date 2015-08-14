@@ -1,0 +1,25 @@
+{
+  "name": "dbjuggle",
+  "version": "0.0.2",
+  "description": "Provides support or framework for various databases with connection pooling if supported and automatic release of connections across asynchronous calls.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/kmcguire/dbjuggle"
+  },
+  "keywords": [
+    "database",
+    "mysql",
+    "pool",
+    "async"
+  ],
+  "author": "Leonard Kevin McGuire Jr <kmcg3413@gmail.com> (http://kmcg3413.net/)",
+  "license": "APACHE LICENSE",
+  "bugs": {
+    "url": "https://github.com/kmcguire/dbjuggle/issues"
+  },
+  "homepage": "https://github.com/kmcguire/dbjuggle"
+}
