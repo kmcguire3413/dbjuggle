@@ -12,6 +12,12 @@ _It does not provide SQL compatibility between databases._
 I only need to add a small stub for sqlite3 to complete support. Also, this module
 is very new and may contain bugs.
 
+## Built-In Database Support
+
+	MySQL - working
+	sqlite3 - disabled 
+	          (working, but missing some release code)
+
 ## Installation
 
 	npm install dbjuggle
@@ -61,7 +67,23 @@ is very new and may contain bugs.
 			var another_trans = dbconn.transaction();
 			/*
 				.... make another transaction ...
+
+				This transaction will actually execute after our current
+				transaction finishes since they are on the same connection.
+
+				If you would like to get a transaction that will run right now 
+				or as soon as possible then grab another database connection 
+				like below.
 			*/
+			dbconn.dup(function (err, anotherconn) {
+				/*
+					This execution may be delayed if no connection exists in
+					the pool and depending on the implementation of the 
+					specific database.
+				*/
+				var trans_on_another_conn = anotherconn.transaction();
+			});
+
 
 			/*
 				We might like to commit or rollback?

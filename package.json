@@ -1,6 +1,6 @@
 {
   "name": "dbjuggle",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Provides support or framework for various databases with connection pooling if supported and automatic release of connections across asynchronous calls.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/kmcguire/dbjuggle"
+    "url": "http://github.com/kmcguire3413/dbjuggle"
   },
   "keywords": [
     "database",
@@ -19,7 +19,7 @@
   "author": "Leonard Kevin McGuire Jr <kmcg3413@gmail.com> (http://kmcg3413.net/)",
   "license": "APACHE LICENSE",
   "bugs": {
-    "url": "https://github.com/kmcguire/dbjuggle/issues"
+    "url": "https://github.com/kmcguire3413/dbjuggle/issues"
   },
-  "homepage": "https://github.com/kmcguire/dbjuggle"
+  "homepage": "https://github.com/kmcguire3413/dbjuggle"
 }

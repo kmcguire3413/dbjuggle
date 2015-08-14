@@ -22,6 +22,18 @@ dbjuggle.DatabaseGeneric = function (dbcfg, dbspec) {
     this.pending = [];
     this.pending_lock = false;
     this.refcnt = 1;
+    this.outstandingtrans = [];
+
+    this.remoutstandingtrans = function (trans) {
+        var ndx = this.outstandingtrans.indexOf(trans);
+        if (ndx > - 1) {
+            this.outstandingtrans.splice(ndx, 1);
+        }
+    }
+
+    this.dup = function (cb) {
+        dbjuggle.opendatabase(dbcfg, cb); 
+    }
 
     this.acquire = function () {
         ++this.refcnt;
@@ -225,6 +237,7 @@ dbjuggle.DatabaseGeneric = function (dbcfg, dbspec) {
                 this.dbi.dbspec.rollback(this);
                 this.commited = false;
                 this.done = true;
+                this.dbi.remoutstandingtrans(this);
                 this.dbi.process_pending(true);
                 return false;
             },
@@ -235,10 +248,13 @@ dbjuggle.DatabaseGeneric = function (dbcfg, dbspec) {
                 this.dbi.dbspec.commit(this);
                 this.commited = true;
                 this.done = true;
+                this.dbi.remoutstandingtrans(this);
                 this.dbi.process_pending(true);
                 return true;
             },
         };
+
+        self.outstandingtrans.push(r);
         return r;
     };
 
