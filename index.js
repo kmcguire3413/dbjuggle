@@ -37,7 +37,7 @@ dbjuggle.DatabaseGeneric = function (dbcfg, dbspec) {
 
     this.acquire = function () {
         ++this.refcnt;
-        console.log('acquire', this.refcnt);
+        //console.log('acquire', this.refcnt);
     };
 
     this.release_all = function () {
@@ -47,7 +47,7 @@ dbjuggle.DatabaseGeneric = function (dbcfg, dbspec) {
 
     this.release = function () {
         --this.refcnt;
-        console.log('release', this.refcnt);
+        //console.log('release', this.refcnt);
         if (this.refcnt > 0) {
             /*
                 Only release once the reference count
@@ -306,7 +306,7 @@ dbjuggle.opendatabase = function (db, cb) {
                                 }
                                 cb.f(cb.data, error, results);
                             });
-                            console.log(stmt, params);
+                            //console.log(stmt, params);
                         } catch (err) {
                             console.log('SQL error');
                             console.log(err);

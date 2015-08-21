@@ -1,6 +1,6 @@
 {
   "name": "dbjuggle",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Provides support or framework for various databases with connection pooling if supported and automatic release of connections across asynchronous calls.",
   "main": "index.js",
   "scripts": {
@@ -11,10 +11,12 @@
     "url": "http://github.com/kmcguire3413/dbjuggle"
   },
   "keywords": [
+    "transaction",
+    "sql",
+    "sqlite",
     "database",
     "mysql",
-    "pool",
-    "async"
+    "pool"
   ],
   "author": "Leonard Kevin McGuire Jr <kmcg3413@gmail.com> (http://kmcg3413.net/)",
   "license": "APACHE LICENSE",
