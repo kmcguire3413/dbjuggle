@@ -1,8 +1,8 @@
 {
   "name": "dbjuggle",
-  "version": "0.0.5",
-  "description": "Provides support or framework for various databases with connection pooling if supported and automatic release of connections across asynchronous calls.",
-  "main": "index.js",
+  "version": "0.1.8",
+  "description": "Provides support (MySQL) or framework (Sqlite3) for various databases with connection pooling if supported and automatic release of connections across asynchronous calls.",
+  "main": "dbjuggle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
